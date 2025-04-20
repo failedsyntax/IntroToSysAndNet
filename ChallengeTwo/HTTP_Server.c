@@ -13,7 +13,7 @@ void *connection_handler(void *socket_desc) {
     // In an ideal world..
     char buf[1024];
     read(sock, buf, sizeof(buf) - 1);
-    buf[1023] = '\0'; // No crashing the buffer!
+    buf[1023] = '\0'; // No crashing the buffer! (had to use AI because I couldn't figure this out)
 
     char method[16] = "", url[1024] = "", proto[16] = "";
     sscanf(buf, "%15s %255s %15s", method, url, proto);
